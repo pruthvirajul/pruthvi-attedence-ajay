@@ -32,14 +32,13 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #ffffff;
             color: var(--dark);
             transition: all 0.3s ease;
         }
 
         .dark-mode {
-            background-color: #121 beacon;
+            background-color: #121212;
             color: var(--light);
         }
 
@@ -809,7 +808,7 @@
                     <form class="action-form" id="punchInForm">
                         <div class="form-group">
                             <label for="empId" class="form-label">Employee ID</label>
-                            <input type="text" id="empId" class="form-input" placeholder="Enter ATS0XXX" required pattern="^ATS0[0-9]{3}$" minlength="7" maxlength="7">
+                            <input type="text" id="empId" class="form-input" placeholder="Enter ATS0XXX" required pattern="^[ATS]{3}0[0-9]{3}$" minlength="7" maxlength="7">
                             <div class="error-message" id="empIdError"></div>
                         </div>
                         <div class="form-group">
@@ -895,7 +894,7 @@
         let selectedDate = new Date().toISOString().split('T')[0];
 
         // Validation regex
-        const empIdRegex = /^ATS0[0-9]{3}$/;
+        const empIdRegex = /^[ATS]{3}0[0-9]{3}$/;
 
         // Helper functions
         function isValidEmployeeId(id) {
@@ -1185,7 +1184,7 @@
                     <form class="action-form" id="punchInForm">
                         <div class="form-group">
                             <label for="empId" class="form-label">Employee ID</label>
-                            <input type="text" id="empId" class="form-input" placeholder="Enter ATS0XXX" required pattern="^ATS0[0-9]{3}$" value="${currentEmpId || ''}">
+                            <input type="text" id="empId" class="form-input" placeholder="Enter ATS0XXX" required pattern="^[ATS]{3}0[0-9]{3}$" value="${currentEmpId || ''}">
                             <div class="error-message" id="empIdError"></div>
                         </div>
                         <div class="form-group">
@@ -1295,7 +1294,7 @@
                     <form class="action-form" id="punchInForm">
                         <div class="form-group">
                             <label for="empId" class="form-label">Employee ID</label>
-                            <input type="text" id="empId" class="form-input" placeholder="Enter ATS0XXX" required pattern="^ATS0[0-9]{3}$" value="${currentEmpId || ''}">
+                            <input type="text" id="empId" class="form-input" placeholder="Enter ATS0XXX" required pattern="^[ATS]{3}0[0-9]{3}$" value="${currentEmpId || ''}">
                             <div class="error-message" id="empIdError"></div>
                         </div>
                         <div class="form-group">
