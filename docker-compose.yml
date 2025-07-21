@@ -10,7 +10,7 @@ services:
       - DB_USER=postgres
       - DB_HOST=postgres
       - DB_NAME=attendance_db
-      - DB_PASSWORD=admin123
+      - DB_PASSWORD=admin321
       - DB_PORT=5432
       - DB_RETRIES=5
       - DB_RETRY_DELAY=3000
@@ -21,7 +21,7 @@ services:
     networks:
       - app-network
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3427/health"]
+      test: ["CMD", "curl", "-f", "http://13.60.17.38:3427/health"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -52,7 +52,7 @@ services:
     environment:
       POSTGRES_DB: attendance_db
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: admin123
+      POSTGRES_PASSWORD: admin321
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql

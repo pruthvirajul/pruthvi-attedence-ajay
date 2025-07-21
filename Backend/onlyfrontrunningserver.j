@@ -26,7 +26,7 @@ const poolConfig = {
     user: process.env.DB_USER || 'postgres',
     host: process.env.DB_HOST || 'postgres',
     database: process.env.DB_NAME || 'attendance_db',
-    password: process.env.DB_PASSWORD || 'admin123',
+    password: process.env.DB_PASSWORD || 'admin321',
     port: process.env.DB_PORT || 5432,
     // Connection retry settings
     retry: {
@@ -63,7 +63,7 @@ async function checkDatabaseConnection(retries = 5, delay = 3000) {
 
 // Middleware
 app.use(cors({
-    origin: ['http://44.223.23.145:8050','http://44.223.23.145:8051','http://44.223.23.145:3427', 'http://localhost:3019', 'http://127.0.0.1:5501', 'http://127.0.0.1:5503'],
+    origin: ['http://13.60.17.38:8050','http://13.60.17.38:8051','http://13.60.17.38:3427', 'http://13.60.17.38:3019', 'http://13.60.17.38:5501', 'http://13.60.17.38:5503'],
     methods: ['GET', 'POST', 'PUT', 'OPTIONS'],
     allowedHeaders: ['Content-Type']
 }));
@@ -366,9 +366,9 @@ async function startServer() {
         
         app.listen(port, '0.0.0.0', () => {
             logger.info(`Server running on port ${port}`);
-            console.log(`Health check: http://44.223.23.145:${port}/health`);
-            console.log(`HR Dashboard: http://44.223.23.145:${port}/attendance.html`);
-            console.log(`Employee Attendance: http://44.223.23.145:${port}/employee_attendance.html`);
+            console.log(`Health check: http://13.60.17.38:${port}/health`);
+            console.log(`HR Dashboard: http://13.60.17.38:${port}/attendance.html`);
+            console.log(`Employee Attendance: http://13.60.17.38:${port}/employee_attendance.html`);
         });
     } catch (err) {
         logger.error('Server startup failed', { error: err.message });
